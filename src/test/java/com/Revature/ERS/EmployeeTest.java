@@ -10,13 +10,15 @@ public class EmployeeTest extends TestCase {
 		assertEquals(tester.getFirst_name(), "No one");
 		assertEquals(tester.getLast_name(), "No one");
 		assertEquals(tester.getDepartment_Num(), 0);
+		assertEquals(tester.geteID(), 0);
 	}
 
 	public void testCTORwithVals() {
-		Employee tester = new Employee("test firstname", "test lastname", 1);
+		Employee tester = new Employee("test firstname", "test lastname", 1, 1);
 		assertEquals(tester.getFirst_name(), "test firstname");
 		assertEquals(tester.getLast_name(), "test lastname");
 		assertEquals(tester.getDepartment_Num(), 1);
+		assertEquals(tester.geteID(), 1);
 	}
 
 	// test get and set for first name
@@ -51,4 +53,15 @@ public class EmployeeTest extends TestCase {
 		tester.setDepartment_Num(5);
 		assertEquals(tester.getDepartment_Num(), 5);
 	}
+	
+	// test get and set for department number
+		public void testgetsetEID() {
+			Employee tester = new Employee();
+
+			int check = tester.geteID();
+			assertEquals(tester.geteID(), check);
+
+			tester.seteID(5);
+			assertEquals(tester.geteID(), 5);
+		}
 }
